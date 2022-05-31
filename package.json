@@ -1,0 +1,17 @@
+{
+  "name": "discordbot-v13",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ImJustNon/Discord-V13-template.git",
+  "author": "ImJustNon <Im_Just_Non@hotmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@discordjs/voice": "^0.9.0",
+    "chalk": "~4.1.2",
+    "discord-phub": "^1.0.6",
+    "discord.js": "~13.6.0",
+    "mongoose": "^6.3.1",
+    "nekos.life": "~2.0.9",
+    "quickmongo": "^5.1.2"
+  }
+}
