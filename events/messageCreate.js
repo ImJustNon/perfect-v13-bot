@@ -1,24 +1,31 @@
 const client = require("..");
 const { cooldown } = require("../handlers/functions");
 const { prefix } = require("../settings/config");
+const db = require("../database/quick_mongo.js");
+const { getPrefix } = require('../utils/getprefix.js');
 
 client.on("messageCreate", async (message) => {
   if (message.author.bot || !message.guild) return;
   if (message.channel.partial) await message.channel.fetch();
   if (message.partial) await message.fetch();
+
+  //music Channels Checker
+  const musicChannel = await db.get(`music_${client.user.id}_${message.guild.id}_channel`)
+  if(musicChannel !== null && message.channel.id === musicChannel) return;
+
   let mentionprefix = new RegExp(
-    `^(<@!?${client.user?.id}>|${mentionprefixnew(prefix)})`
+    `^(<@!?${client.user?.id}>|${mentionprefixnew(await getPrefix(message.guild.id))})`
   );
   if (!mentionprefix.test(message.content)) return;
   const [, nprefix] = message.content.match(mentionprefix);
   if (nprefix.includes(client.user.id)) {
-    message.reply(`**To See My All Commans Type **\`/help\``);
+    message.reply(`**ดูคำสั่งทั้งหมดใช้ **\`/help\``);
   }
+
   const args = message.content.slice(nprefix.length).trim().split(/ +/);
   const cmd = args.shift().toLowerCase();
-  const command =
-    client.mcommands.get(cmd) ||
-    client.mcommands.find((cmds) => cmds.aliases && cmds.aliases.includes(cmd));
+
+  const command = client.mcommands.get(cmd) || client.mcommands.find((cmds) => cmds.aliases && cmds.aliases.includes(cmd));
   if (!command) return;
   if (command) {
     if (!message.member.permissions.has(command.userPermissions || [])) {

@@ -1,0 +1,14 @@
+'prefix_${message.guild.id}_${client.user.id}'
+`${client.user.id}_music_${player.guild}_channel`
+`music_${client.user.id}_${message.guild.id}_channel`
+`music_${client.user.id}_${player.guild}_track_message`
+`music_${client.user.id}_${player.guild}_queue_message`
+
+
+
+
+
+
+
+
+

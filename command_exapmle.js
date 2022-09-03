@@ -18,6 +18,22 @@ module.exports = new Command({
         type: "STRING",
         required: false,
       },
+      {
+        name: "choice",
+        description: `description`,
+        type: "STRING",
+        required: false,
+        choices: [
+          {
+            name: "choice_name",
+            value: 'value',
+          },
+          {
+            name: "choice_name2",
+            value: 'value2',
+          },
+        ],
+      },
     ],
     run: async ({ client, interaction, args, prefix }) => {
 

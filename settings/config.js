@@ -1,6 +1,8 @@
+const { client } = require('../index.js');
+
 module.exports = {
-  token: "",
-  prefix: "!",
+  token: "OTgyNzAzMzk4MTk5NjUyNDAy.Gsy0Wk.DZzIuh99mZ9l9IlHIvK6V8WDfgFqCG9_JFGuBQ",
+  prefix: "a!",
   config: {
     Permission: '8', //150314937471
     OwnerID: '708965153131200594',
@@ -15,7 +17,8 @@ module.exports = {
   embed: {
     color: "#2f3136",
     wrongcolor: "#2f3136",
-    footertext: "bot",
+    dedaultcolor: "#fc3258",
+    footertext: "A i K O",
     footericon: "https://images-ext-1.discordapp.net/external/C2xH2P5W4KM4F6wPxElhlzyVrZ5bjWl9_TPT-X_3hfs/%3Fsize%3D512/https/cdn.discordapp.com/avatars/894158815166095390/b3963f5de220e55d185c5b9d15648a82.webp?width=424&height=424",
   },
   emoji: {
@@ -48,12 +51,15 @@ module.exports = {
     reduce_volume: "🔉",
     raise_volume: "🔊",
     toggle_mute: "🔇",
-    repeat_mode: "🔄",
+    repeat_mode: "🔄", 
     autoplay_mode: "♾",
     shuffle: "🔀",
     show_queue: "📑",
     show_current_track: "🩸",
     bot: "🤖",
+    room: "🏡",
+    time: "⏲️",
+    inbox: "📥",
   },
   api: {
     imageapi: '',
@@ -66,6 +72,74 @@ module.exports = {
     detectLanguageAPI: '',
   },
   database: {
-    mongodbURL: '',  
+    mongodbURL: 'mongodb://203.78.129.233:27017/',  
+  },
+  music: {
+    use_local_node: false,
+    nodes: [ 
+      {
+          id: 'main',
+          host: '203.78.129.233',
+          port: 2333,
+          password: 'reirin',
+          secure: false,
+          retryAmount : Infinity,
+          retryDelay : 3000,
+      },
+    ],
+    spotify: {
+        enable: false,
+        id: '14fb69255922464cbec11930cfeff379',
+        secret: 'bce4acf93ebd4a13a11c88bd42424172',
+        spotify_playlist_page_limit: 100,
+    },
+    autoplay: true,
+    config: {
+        defaultSupportImage: 'https://cdn.discordapp.com/attachments/933667577207611402/960360690772758559/standard_2.gif',
+        defaultTrackImage: 'https://cdn.discordapp.com/attachments/933667577207611402/960358910185865316/standard.gif',
+        embedColor: '#f70dff',
+    },
+    radioStation: [
+        {
+            name: '18K Radio', 
+            url: 'http://112.121.151.133:8147/live',
+            emoji: '👑', 
+            page: 'https://ecq-studio.com/18K/X/',
+            config: {
+                color: '#fccd32',
+            },
+        },
+        {
+          name: 'LISTEN.moe (JPOP)', 
+          url: 'https://listen.moe/stream',
+          emoji: '📻', 
+          page: 'https://listen.moe/',
+          config: {
+              color: '#f2182e',
+          },
+        },
+        {
+          name: 'LISTEN.moe (KPOP)', 
+          url: 'https://listen.moe/kpop/stream',
+          emoji: '📻', 
+          page: 'https://listen.moe/',
+          config: {
+              color: '#f2182e',
+          },
+        },
+    ],   
+    radio_assets: {
+        banner: 'https://cdn.discordapp.com/attachments/831877886680104971/989586012990758992/standard.gif',
+        color: '#fc3258',
+    },
+    embed: {
+      color: '#c634eb',
+      defaultimage: 'https://cdn.discordapp.com/attachments/887363452304261140/964737487383711764/standard_7.gif',
+      banner: 'https://cdn.discordapp.com/attachments/887363452304261140/964713073527099392/standard_4.gif',
+      footer: "A i K O",
+    },
+    api: {
+      Genius_Lyrics_Api: '821ZWPq5hpLKbrIQd315c4_OWu2HEnh7yRDjESo-XKjOzUNWY0KIrDgyxy52B1zp',
+    },
   },
 };

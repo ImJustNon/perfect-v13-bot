@@ -32,7 +32,9 @@ const client = new Client({
   ],
 });
 module.exports = client;
+
 const { token } = require("./settings/config");
+const setting = require("./settings/config.js");
 
 // Global Variables
 client.events = new Collection();
@@ -45,8 +47,17 @@ client.categories = fs.readdirSync("./commands/");
 
 // Initializing the project
 //Loading files, with the client variable like Command Handler, Event Handler, ...
-["event_handler", "slash_handler", "cmd_handler", "error_handler"].forEach((handler) => {
+["event_handler", "slash_handler", "cmd_handler", ].forEach((handler) =>{
   require(`./handlers/${handler}`)(client);
 });
+//music Client
+require('./music/main.js')(client);
+if(setting.music.use_local_node){
+  require('./music/nodes/start.js')(client);
+}
+
+//module loader
+require("./modules/click_to_create/load_modules.js")(client);
 
 client.login(token);
+

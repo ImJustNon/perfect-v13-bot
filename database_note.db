@@ -1,1 +1,0 @@
-'prefix_${message.guild.id}_${client.user.id}'
