@@ -25,10 +25,10 @@ module.exports = async (client) => {
           client.commands.set(pull.name, pull);
           client.arrayOfcommands.push(pull);
         } else {
-          console.log(chalk.redBright.bold('[Slash-Commands] ') + chalk.whiteBright.bold("Can't load command : ") + chalk.redBright.bold(cmds));
+          console.log(chalk.redBright.bold('[Slash-Commands-Handler] ') + chalk.whiteBright.bold("Can't load command : ") + chalk.redBright.bold(cmds));
           continue;
         }
-        console.log(chalk.hex('#ff7926').bold(`[Slash-Commands] `) + chalk.whiteBright.bold(`Loading event : `) + chalk.hex('#ff7926').bold(cmds));
+        console.log(chalk.hex('#ff7926').bold(`[Slash-Commands-Handler] `) + chalk.whiteBright.bold(`Loading command : `) + chalk.hex('#ff7926').bold(cmds));
       }
     });
     client.on("ready", async () => {
@@ -43,7 +43,7 @@ module.exports = async (client) => {
         console.log(e);
       }
     });
-    console.log(chalk.hex('#ff7926').bold(`[Slash-Commands] `) + chalk.whiteBright.bold(`Total loaded : `) + chalk.hex('#ff7926').bold(client.commands.size));
+    console.log(chalk.hex('#ff7926').bold(`[Slash-Commands-Handler] `) + chalk.whiteBright.bold(`Total loaded : `) + chalk.hex('#ff7926').bold(client.commands.size));
   } catch (e) {
     console.log(e);
   }

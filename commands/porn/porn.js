@@ -25,6 +25,28 @@ module.exports = new Command({
             description: `เลือกนามสกุลไฟล์ เช่น (jpeg / jpg / png / gif / mp4)`,
             type: "STRING",
             required: true,
+            choices: [
+                {
+                    name: "JPEG",
+                    value: 'jpeg',
+                },
+                {
+                    name: "JPG",
+                    value: 'jpg',
+                },
+                {
+                    name: "PNG",
+                    value: 'png',
+                },
+                {
+                    name: "GIF",
+                    value: 'gif',
+                },
+                {
+                    name: "MP4",
+                    value: 'mp4',
+                },
+            ],
         },
     ],
     run: async ({ client, interaction, args, prefix }) => {

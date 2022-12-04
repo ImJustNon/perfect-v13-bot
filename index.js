@@ -47,7 +47,7 @@ client.categories = fs.readdirSync("./commands/");
 
 // Initializing the project
 //Loading files, with the client variable like Command Handler, Event Handler, ...
-["event_handler", "slash_handler", "cmd_handler", ].forEach((handler) =>{
+["event_handler", "slash_handler", "cmd_handler", "error_handler"].forEach((handler) =>{
   require(`./handlers/${handler}`)(client);
 });
 //music Client

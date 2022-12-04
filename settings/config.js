@@ -1,4 +1,5 @@
 const { client } = require('../index.js');
+const { parseBoolean } = require("../utils/parseBoolean.js");
 
 module.exports = {
   token: "OTgyNzAzMzk4MTk5NjUyNDAy.Gsy0Wk.DZzIuh99mZ9l9IlHIvK6V8WDfgFqCG9_JFGuBQ",
@@ -60,31 +61,35 @@ module.exports = {
     room: "🏡",
     time: "⏲️",
     inbox: "📥",
+    music: "🎶",
+    music_filter: "🎛", 
+    reset: "♻",
+    setting: "⚙",
   },
-  api: {
-    imageapi: '',
-    youtubeapi: '',
-    openweatherapi: '',
-    imdbapi: '',
-    tenorapi:'',
-    giphyapi: '',
-    somerandomapi: '',
-    detectLanguageAPI: '',
+  api: {       
+    amethyste_API: 'bb03f373caa534fcfcbaeae177a65134f44a6e57ba7a7b098be273867b376d8a677ddae3c23c6ded4fec8288573945e8c3483689deb13f229376ad4b5b60231d',
+    youtube_V3_API: 'AIzaSyCxbnVT8gW9zXlw_W6E7TB8_482OhuyO38',
+    openweather_API: 'c6beb8aca641c6c7683c40abdf4779a5',
+    imdb_API: '5e36f0db',
+    tenor_API: 'N3J5SA3FY0AK',
+    giphy_API: 'W8g6R14C0hpH6ZMon9HV9FTqKs4o4rCk',
+    somerandom_API: 'pUVCA3c0WcVj95IeXgpS0Ub6jnHdBWrc4f0Q8U753zFgr3TcEwm9DHmry8TrOy6o',
+    detectLanguage_API: '4795a5285114d73fab5ea17bac331920',
   },
   database: {
-    mongodbURL: 'mongodb://203.78.129.233:27017/',  
+    mongodbURL: 'mongodb+srv://Kwan-0111:LIVPbGPbI6fVLM9E@cluster0.rp8ie.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',  // mongodb://203.78.129.233:27017/
   },
   music: {
     use_local_node: false,
     nodes: [ 
       {
-          id: 'main',
-          host: '203.78.129.233',
-          port: 2333,
-          password: 'reirin',
-          secure: false,
-          retryAmount : Infinity,
-          retryDelay : 3000,
+        id: 'main',
+        host: '203.78.129.233',
+        port: 2333,
+        password: 'reirin',
+        secure: false,
+        retryAmount : Infinity,
+        retryDelay : 3000,
       },
     ],
     spotify: {

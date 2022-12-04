@@ -10,7 +10,7 @@ module.exports = async(client) =>{
     const guild_event = fs.readdirSync(__dirname + '/events/guild').filter(name => name.endsWith('.js'));
     guild_event.forEach(async(x) =>{
         require(`./events/guild/${x}`)(client);
-        console.log(chalk.blueBright.bold(`[Node] `) + chalk.whiteBright.bold(`Loading event : `) + chalk.blueBright.bold(`${x}`));
+        console.log(chalk.blueBright.bold(`[Music-Client-Event-Handler] `) + chalk.whiteBright.bold(`Loading event : `) + chalk.blueBright.bold(`${x}`));
     });
 
     //messageCreate Event files
@@ -18,5 +18,5 @@ module.exports = async(client) =>{
     //Button interactionCreate
     require('./channel/click_button.js')(client);
 
-    console.log(chalk.blueBright.bold(`[Node] `) + chalk.whiteBright.bold(`Total loaded : `) + chalk.blueBright.bold(`${guild_event.length}`));
+    console.log(chalk.blueBright.bold(`[Music-Client-Event-Handler] `) + chalk.whiteBright.bold(`Total loaded : `) + chalk.blueBright.bold(`${guild_event.length}`));
 }

@@ -7,7 +7,7 @@ module.exports = {
         let loopType = 'ปิด';
         if(player.trackRepeat) loopType = 'เพลงเดียว';
         else if(player.queueRepeat) loopType = 'ทั้งหมด'; 
-        let vol = player.volume;
+        let vol = await player.volume;
         if(player.volume <= 0) vol = 'ปิดเสียง';
 
         const embed = new MessageEmbed()
@@ -15,7 +15,7 @@ module.exports = {
             .setTitle(player.queue.current.title)
             .setURL(player.queue.current.uri)
             .setImage(await youtubeThumbnail(player.queue.current.uri, 'high'))
-            .setFooter({ text: `เปิดโดย : ${player.queue.current.requester.username} | Loop : ${loopType} | Volume : ${vol}`})
+            .setFooter({ text: `เปิดโดย : ${player.queue.current.requester.username} | Loop : ${loopType} | Volume : ${String(vol)}`})
         return embed;
     }
 };

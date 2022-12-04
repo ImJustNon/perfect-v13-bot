@@ -24,7 +24,7 @@ module.exports = async(client) =>{
             let queueMessage = await musicChannel.messages.fetch(queueMessageID);
 
             await trackEmbed.edit({embeds: [(await track_msg_Embed(client, player))]});
-            await queueMessage.edit(queue_msg(client, player));
+            await queueMessage.edit({ content: (await queue_msg(client, player))});
         }
         else {
             const embed = new MessageEmbed()

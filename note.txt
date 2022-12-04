@@ -1,0 +1,4 @@
+File :: C:\Users\Im_Ju\Desktop\Project\Discord_bot\Dev.version\discordBot-v13\music\utils\track_start_embed.js
+- Ln 10, Col 19
+
+Database :: 

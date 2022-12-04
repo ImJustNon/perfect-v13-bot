@@ -93,7 +93,7 @@ module.exports = async(client, message) => {
             if(!player.playing){
                 await player.play();
             }
-			queueMessage.edit(queue_msg(client, player));
+			queueMessage.edit({ content: await queue_msg(client, player)});
         }
 
             break;
@@ -108,7 +108,7 @@ module.exports = async(client, message) => {
             if(!player.playing){
                 await player.play();
             }
-			queueMessage.edit(queue_msg(client, player));
+			queueMessage.edit({ content: await queue_msg(client, player)});
         }
             break;
             case "TRACK_LOADED": 
@@ -122,7 +122,7 @@ module.exports = async(client, message) => {
             if(!player.playing){
                 await player.play(); 
             }
-            queueMessage.edit(queue_msg(client, player));
+            queueMessage.edit({ content: await queue_msg(client, player)});
         }
             break;
         default:

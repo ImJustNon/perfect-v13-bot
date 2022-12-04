@@ -17,15 +17,15 @@ module.exports = (client) => {
         if (pull.name) {
           client.mcommands.set(pull.name, pull);
         } else {
-          console.log(chalk.redBright.bold('[Message-Commands] ') + chalk.whiteBright.bold("Can't load command : ") + chalk.redBright.bold(cmds));
+          console.log(chalk.redBright.bold('[Message-Commands-Handler] ') + chalk.whiteBright.bold("Can't load command : ") + chalk.redBright.bold(cmds));
           continue;
         }
-        console.log(chalk.hex('#ffbe3d').bold(`[Message-Commands] `) + chalk.whiteBright.bold(`Loading command : `) + chalk.hex('#ffbe3d').bold(cmds));
+        console.log(chalk.hex('#ffbe3d').bold(`[Message-Commands-Handler] `) + chalk.whiteBright.bold(`Loading command : `) + chalk.hex('#ffbe3d').bold(cmds));
         if (pull.aliases && Array.isArray(pull.aliases))
           pull.aliases.forEach((alias) => client.aliases.set(alias, pull.name));
       }
     });
-    console.log(chalk.hex('#ffbe3d').bold(`[Message-Commands] `) + chalk.whiteBright.bold(`Total loaded : `) + chalk.hex('#ffbe3d').bold(client.mcommands.size));
+    console.log(chalk.hex('#ffbe3d').bold(`[Message-Commands-Handler] `) + chalk.whiteBright.bold(`Total loaded : `) + chalk.hex('#ffbe3d').bold(client.mcommands.size));
   } catch (err) {
     console.log(err);
   }

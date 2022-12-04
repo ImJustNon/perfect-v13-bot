@@ -9,7 +9,8 @@ client.on("messageCreate", async (message) => {
   if (message.channel.partial) await message.channel.fetch();
   if (message.partial) await message.fetch();
 
-  //music Channels Checker
+  // music Channels Checker
+  // if message in music channel will return 
   const musicChannel = await db.get(`music_${client.user.id}_${message.guild.id}_channel`)
   if(musicChannel !== null && message.channel.id === musicChannel) return;
 

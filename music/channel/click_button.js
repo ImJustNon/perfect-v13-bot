@@ -9,7 +9,7 @@ const { convertTime } = require('../utils/convertTime.js');
 const { Player } = require('discord-player');
 const { queue_msg } = require('../utils/queue_message.js');
 const { track_msg_Embed_loop } = require('../utils/track_msg_embed_loop.js');
-const { track_msg_Embed} = require('../utils/track_start_embed.js');
+const { track_msg_Embed } = require('../utils/track_start_embed.js');
 
 module.exports = async(client) =>{
     client.on('interactionCreate', async(interaction) =>{
@@ -127,7 +127,7 @@ module.exports = async(client) =>{
                 else{
                     await player.queue.shuffle();
                     await interaction.reply(':white_check_mark: ทำการสุ่มเรียงรายการคิวใหม่เรียบร้อยเเล้วค่ะ').then(async() =>{ 
-                        await queueMessage.edit(await queue_msg(client, player));
+                        await queueMessage.edit({ content: await queue_msg(client, player)});
                         setTimeout(async() =>{
                             await interaction.deleteReply();
                         }, 5000); 
@@ -139,7 +139,7 @@ module.exports = async(client) =>{
                 if(newVol < 110){
                     player.setVolume(newVol);
                     await interaction.reply(`:white_check_mark: ทำการปรับความดังเสียงเป็น \`${newVol}\` เรียบร้อยเเล้วค่ะ`).then(async() =>{ 
-                        await trackEmbed.edit(await track_msg_Embed(client, player));
+                        await trackEmbed.edit({ embeds: [ await track_msg_Embed(client, player) ]});
                         setTimeout(async() =>{
                             await interaction.deleteReply();
                         }, 5000); 
@@ -158,7 +158,7 @@ module.exports = async(client) =>{
                 if(newVol > 0){
                     player.setVolume(newVol);
                     await interaction.reply(`:white_check_mark: ทำการปรับความดังเสียงเป็น \`${newVol}\` เรียบร้อยเเล้วค่ะ`).then(async() =>{ 
-                        await trackEmbed.edit(await track_msg_Embed(client, player));
+                        await trackEmbed.edit({ embeds: [ await track_msg_Embed(client, player) ]});
                         setTimeout(async() =>{
                             await interaction.deleteReply();
                         }, 5000); 

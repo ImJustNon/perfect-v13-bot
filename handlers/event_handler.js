@@ -16,9 +16,9 @@ module.exports = (client) => {
           client.events.set(file, pull);
         }
       }
-      console.log(chalk.hex('#81ff3d').bold(`[Events] `) + chalk.whiteBright.bold(`Loading event : `) + chalk.hex('#81ff3d').bold(file));
+      console.log(chalk.hex('#81ff3d').bold(`[Events-Handler] `) + chalk.whiteBright.bold(`Loading event : `) + chalk.hex('#81ff3d').bold(file));
     });
-    console.log(chalk.hex('#81ff3d').bold(`[Events] `) + chalk.whiteBright.bold(`Total loaded : `) + chalk.hex('#81ff3d').bold(client.events.size));
+    console.log(chalk.hex('#81ff3d').bold(`[Events-Handler] `) + chalk.whiteBright.bold(`Total loaded : `) + chalk.hex('#81ff3d').bold(client.events.size));
   } catch (e) {
     console.log(e);
   }

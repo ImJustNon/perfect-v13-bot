@@ -2,6 +2,10 @@
   "name": "discordbot-v13",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
   "repository": "https://github.com/ImJustNon/Discord-V13-template.git",
   "author": "ImJustNon <Im_Just_Non@hotmail.com>",
   "license": "MIT",
@@ -21,6 +25,7 @@
     "fs": "^0.0.1-security",
     "mongoose": "^6.3.1",
     "nekos.life": "~2.0.9",
+    "nodemon": "^2.0.20",
     "quickmongo": "^5.1.2",
     "superweir-jooxapi": "^1.0.0",
     "xtones-musicjoox": "~1.1.7",
